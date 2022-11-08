@@ -1,0 +1,6501 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/v3/auth/login": {
+      "post": {
+        "operationId": "AuthController_login",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CredentialsDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "auth"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/auth/msad": {
+      "post": {
+        "operationId": "AuthController_adLogin",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CredentialsDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "auth"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/auth/whoami": {
+      "get": {
+        "operationId": "AuthController_whoami",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "auth"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/users/jwt": {
+      "post": {
+        "operationId": "UsersController_getUserJWT",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/users/login": {
+      "post": {
+        "operationId": "UsersController_login",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CredentialsDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/users/{id}": {
+      "get": {
+        "operationId": "UsersController_findById",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/users/{id}/userIdentity": {
+      "get": {
+        "operationId": "UsersController_getUserIdentity",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/users/{id}/settings": {
+      "post": {
+        "operationId": "UsersController_createSettings",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserSettings"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "UsersController_getSettings",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "put": {
+        "operationId": "UsersController_updateSettings",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "patch": {
+        "operationId": "UsersController_patchSettings",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "UsersController_removeSettings",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/useridentities/findOne": {
+      "get": {
+        "operationId": "UserIdentitiesController_findOne",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "user identities"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets": {
+      "post": {
+        "operationId": "DatasetsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDatasetDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dataset"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "DatasetsController_findAll",
+        "parameters": [
+          {
+            "name": "filter",
+            "required": false,
+            "in": "query",
+            "description": "Database filters to apply when retrieve all datasets",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets/fullquery": {
+      "get": {
+        "operationId": "DatasetsController_fullquery",
+        "parameters": [
+          {
+            "name": "filters",
+            "required": false,
+            "in": "query",
+            "description": "Database filter to apply when retrieve all datasets",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets/fullfacet": {
+      "get": {
+        "operationId": "DatasetsController_fullfacet",
+        "parameters": [
+          {
+            "name": "filters",
+            "required": false,
+            "in": "query",
+            "description": "Database filter to apply when retrieve all datasets",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets/metadataKeys": {
+      "get": {
+        "operationId": "DatasetsController_metadataKeys",
+        "parameters": [
+          {
+            "name": "filters",
+            "required": false,
+            "in": "query",
+            "description": "Database filter to apply when retrieve all metadata keys",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets/findOne": {
+      "get": {
+        "operationId": "DatasetsController_findOne",
+        "parameters": [
+          {
+            "name": "filter",
+            "required": false,
+            "in": "query",
+            "description": "Database filter to apply when finding a Dataset",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets/count": {
+      "get": {
+        "operationId": "DatasetsController_count",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets/{id}": {
+      "get": {
+        "operationId": "DatasetsController_findById",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "patch": {
+        "operationId": "DatasetsController_findByIdAndUpdate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDatasetDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "put": {
+        "operationId": "DatasetsController_findByIdReplaceOrCreate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDatasetDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "DatasetsController_findByIdAndDelete",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets/{id}/appendToArrayField": {
+      "post": {
+        "operationId": "DatasetsController_appendToArrayField",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fieldName",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets/{id}/thumbnail": {
+      "get": {
+        "operationId": "DatasetsController_thumbnail",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets/{id}/attachments": {
+      "post": {
+        "operationId": "DatasetsController_createAttachment",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAttachmentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "DatasetsController_findAllAttachments",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Attachment"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets/{id}/attachments/{fk}": {
+      "patch": {
+        "operationId": "DatasetsController_findOneAttachmentAndUpdate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fk",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAttachmentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "DatasetsController_findOneAttachmentAndRemove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fk",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets/{id}/origdatablocks": {
+      "post": {
+        "operationId": "DatasetsController_createOrigDatablock",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrigdatablockDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "DatasetsController_findAllOrigDatablocks",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrigDatablock"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets/{id}/origdatablocks/{fk}": {
+      "patch": {
+        "operationId": "DatasetsController_findOneOrigDatablockAndUpdate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fk",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateOrigdatablockDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "DatasetsController_findOneOrigDatablockAndRemove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fk",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets/{id}/datablocks": {
+      "post": {
+        "operationId": "DatasetsController_createDatablock",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDatablockDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "DatasetsController_findAllDatablocks",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Datablock"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/datasets/{id}/datablocks/{fk}": {
+      "patch": {
+        "operationId": "DatasetsController_findOneDatablockAndUpdate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fk",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDatablockDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "DatasetsController_findOneDatablockAndRemove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fk",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "datasets"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/logbooks": {
+      "get": {
+        "operationId": "LogbooksController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "logbooks"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/logbooks/{name}": {
+      "get": {
+        "operationId": "LogbooksController_findByName",
+        "parameters": [
+          {
+            "name": "name",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filters",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "logbooks"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/proposals": {
+      "post": {
+        "operationId": "ProposalsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProposalDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Proposal"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "ProposalsController_findAll",
+        "parameters": [
+          {
+            "name": "filters",
+            "required": false,
+            "in": "query",
+            "description": "Database filters to apply when retrieve all proposals",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Proposal"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/proposals/fullquery": {
+      "get": {
+        "operationId": "ProposalsController_fullquery",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Proposal"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/proposals/fullfacet": {
+      "get": {
+        "operationId": "ProposalsController_fullfacet",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/proposals/{id}": {
+      "get": {
+        "operationId": "ProposalsController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "patch": {
+        "operationId": "ProposalsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProposalDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "ProposalsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/proposals/{id}/attachments": {
+      "post": {
+        "operationId": "ProposalsController_createAttachment",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAttachmentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Attachment"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "ProposalsController_findAllAttachments",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Attachment"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/proposals/{id}/attachments/{fk}": {
+      "patch": {
+        "operationId": "ProposalsController_findOneAttachmentAndUpdate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fk",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAttachmentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "ProposalsController_findOneAttachmentAndRemove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fk",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/proposals/{id}/datasets": {
+      "post": {
+        "operationId": "ProposalsController_createDataset",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dataset"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "ProposalsController_findAllDatasets",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/proposals/{id}/datasets/{fk}": {
+      "patch": {
+        "operationId": "ProposalsController_findOneDatasetAndUpdate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fk",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRawDatasetDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "ProposalsController_findOneDatasetAndRemove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fk",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "proposals"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/instruments": {
+      "post": {
+        "operationId": "InstrumentsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateInstrumentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Instrument"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "instruments"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "InstrumentsController_findAll",
+        "parameters": [
+          {
+            "name": "filter",
+            "required": false,
+            "in": "query",
+            "description": "Database filters to apply when retrieve all instruments",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Instrument"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "instruments"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/instruments/{id}": {
+      "get": {
+        "operationId": "InstrumentsController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "instruments"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "patch": {
+        "operationId": "InstrumentsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateInstrumentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "instruments"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "InstrumentsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "instruments"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/jobs": {
+      "post": {
+        "operationId": "JobsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateJobDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Job"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "jobs"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "JobsController_findAll",
+        "parameters": [
+          {
+            "name": "filter",
+            "required": false,
+            "in": "query",
+            "description": "Database filters to apply when retrieve all jobs",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Job"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "jobs"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/jobs/fullquery": {
+      "get": {
+        "operationId": "JobsController_fullquery",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Job"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "jobs"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/jobs/fullfacet": {
+      "get": {
+        "operationId": "JobsController_fullfacet",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "jobs"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/jobs/{id}": {
+      "get": {
+        "operationId": "JobsController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "jobs"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "patch": {
+        "operationId": "JobsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateJobDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "jobs"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "JobsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "jobs"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/policies": {
+      "post": {
+        "operationId": "PoliciesController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePolicyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Policy"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "policies"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "PoliciesController_findAll",
+        "parameters": [
+          {
+            "name": "filter",
+            "required": false,
+            "in": "query",
+            "description": "Database filters to apply when retrieve all policies",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Policy"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "policies"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/policies/count": {
+      "get": {
+        "operationId": "PoliciesController_count",
+        "parameters": [
+          {
+            "name": "where",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "policies"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/policies/updateWhere": {
+      "post": {
+        "operationId": "PoliciesController_updateWhere",
+        "parameters": [
+          {
+            "name": "ownerGroupList",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "data",
+            "required": true,
+            "in": "query",
+            "description": "Policy JSON object",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ownerGrouplist",
+            "required": true,
+            "in": "query",
+            "description": "Stringified array of owner groups",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "policies"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/policies/{id}": {
+      "get": {
+        "operationId": "PoliciesController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "policies"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "patch": {
+        "operationId": "PoliciesController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePolicyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "policies"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "PoliciesController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "policies"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/publisheddata": {
+      "post": {
+        "operationId": "PublishedDataController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePublishedDataDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublishedData"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "published data"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "PublishedDataController_findAll",
+        "parameters": [
+          {
+            "name": "filter",
+            "required": false,
+            "in": "query",
+            "description": "Database filters to apply when retrieve all published data",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublishedData"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "published data"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/publisheddata/count": {
+      "get": {
+        "operationId": "PublishedDataController_count",
+        "parameters": [
+          {
+            "name": "filter",
+            "required": false,
+            "in": "query",
+            "description": "Database filters to apply when retrieve published data count",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "published data"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/publisheddata/formpopulate": {
+      "get": {
+        "operationId": "PublishedDataController_formPopulate",
+        "parameters": [
+          {
+            "name": "pid",
+            "required": true,
+            "in": "query",
+            "description": "Dataset pid used to fetch form data.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "published data"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/publisheddata/{id}": {
+      "get": {
+        "operationId": "PublishedDataController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "published data"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "patch": {
+        "operationId": "PublishedDataController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePublishedDataDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "published data"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "PublishedDataController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "published data"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/publisheddata/{id}/register": {
+      "post": {
+        "operationId": "PublishedDataController_register",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "published data"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/publisheddata/{id}/resync": {
+      "post": {
+        "operationId": "PublishedDataController_resync",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePublishedDataDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "published data"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/samples": {
+      "post": {
+        "operationId": "SamplesController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSampleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Sample"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "SamplesController_findAll",
+        "parameters": [
+          {
+            "name": "filters",
+            "required": false,
+            "in": "query",
+            "description": "Database filters to apply when retrieve all samples",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Sample"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/samples/fullquery": {
+      "get": {
+        "operationId": "SamplesController_fullquery",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Sample"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/samples/metadataKeys": {
+      "get": {
+        "operationId": "SamplesController_metadataKeys",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/samples/findOne": {
+      "get": {
+        "operationId": "SamplesController_findOne",
+        "parameters": [
+          {
+            "name": "filter",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/samples/{id}": {
+      "get": {
+        "operationId": "SamplesController_findById",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "patch": {
+        "operationId": "SamplesController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSampleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "SamplesController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/samples/{id}/attachments": {
+      "post": {
+        "operationId": "SamplesController_createAttachments",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAttachmentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Attachment"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "SamplesController_findAllAttachments",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Attachment"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/samples/{id}/attachments/{fk}": {
+      "patch": {
+        "operationId": "SamplesController_findOneAttachmentAndUpdate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fk",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAttachmentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "SamplesController_findOneAttachmentAndRemove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fk",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/samples/{id}/datasets": {
+      "post": {
+        "operationId": "SamplesController_createDataset",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRawDatasetDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dataset"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "operationId": "SamplesController_findAllDatasets",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/v3/samples/{id}/datasets/{fk}": {
+      "patch": {
+        "operationId": "SamplesController_findOneDatasetAndUpdate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fk",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRawDatasetDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "SamplesController_findOneDatasetAndRemove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fk",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "samples"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Dacat API",
+    "description": "SciCat backend API",
+    "version": "4.0.0",
+    "contact": {}
+  },
+  "tags": [
+    {
+      "name": "scicat",
+      "description": ""
+    }
+  ],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http"
+      }
+    },
+    "schemas": {
+      "CredentialsDto": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "The username of the user"
+          },
+          "password": {
+            "type": "string",
+            "description": "The password of the user"
+          }
+        },
+        "required": [
+          "username",
+          "password"
+        ]
+      },
+      "UserSettings": {
+        "type": "object",
+        "properties": {
+          "columns": {
+            "default": [],
+            "description": "Array of the users preferred columns in dataset table",
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "datasetCount": {
+            "type": "number",
+            "default": 25,
+            "description": "The users preferred number of datasets to view per page"
+          },
+          "jobCount": {
+            "type": "number",
+            "default": 25,
+            "description": "The users preferred number of jobs to view per page"
+          },
+          "userId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "columns",
+          "datasetCount",
+          "jobCount",
+          "userId"
+        ]
+      },
+      "CreateAttachmentDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "thumbnail": {
+            "type": "string",
+            "description": "Contains a thumbnail preview in base64 encoded png format for a given dataset"
+          },
+          "caption": {
+            "type": "string",
+            "description": "Attachment caption to show in catanie"
+          },
+          "datasetId": {
+            "type": "string"
+          },
+          "proposalId": {
+            "type": "string"
+          },
+          "sampleId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "thumbnail",
+          "caption"
+        ]
+      },
+      "Lifecycle": {
+        "type": "object",
+        "properties": {
+          "archivable": {
+            "type": "boolean",
+            "description": "Flag which is true, if dataset is available to be archived and no archive job for this dataset exists yet."
+          },
+          "retrievable": {
+            "type": "boolean",
+            "description": "Flag which is true, if dataset is stored on archive system and is ready to be retrieved."
+          },
+          "publishable": {
+            "type": "boolean",
+            "description": "Flag which is true, if dataset can be published. Usually requires a longterm storage option on tape or similar."
+          },
+          "dateOfDiskPurging": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Day when dataset will be removed from disk, assuming that is already stored on tape."
+          },
+          "archiveRetentionTime": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Day when the dataset's future fate will be evaluated again, e.g. to decide if the dataset can be deleted from archive."
+          },
+          "dateOfPublishing": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Day when dataset is supposed to become public according to data policy"
+          },
+          "publishedOn": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Day when dataset was published."
+          },
+          "isOnCentralDisk": {
+            "type": "boolean",
+            "description": "Flag which is true, if full dataset is available on central fileserver. If false data needs to be copied from decentral storage place to  a cache server before the ingest. This information needs to be transferred to the archive system at archive time"
+          },
+          "archiveStatusMessage": {
+            "type": "string",
+            "description": "Short string defining current status of Dataset with respect to storage on disk/tape."
+          },
+          "retrieveStatusMessage": {
+            "type": "string",
+            "description": "Latest message for this dataset concerning retrieve from archive system."
+          },
+          "archiveReturnMessage": {
+            "type": "object",
+            "description": "Detailed status or error message returned by archive system when archiving this dataset."
+          },
+          "retrieveReturnMessage": {
+            "type": "object",
+            "description": "Detailed status or error message returned by archive system when retrieving this dataset."
+          },
+          "exportedTo": {
+            "type": "string",
+            "description": "Location of the last export destination."
+          },
+          "retrieveIntegrityCheck": {
+            "type": "boolean",
+            "description": "Set to true when checksum tests after retrieve of datasets were successful"
+          }
+        }
+      },
+      "Technique": {
+        "type": "object",
+        "properties": {
+          "pid": {
+            "type": "string",
+            "description": "Persistent Identifier dervied from UUIDv4"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the technique"
+          }
+        },
+        "required": [
+          "pid",
+          "name"
+        ]
+      },
+      "CreateDerivedDatasetDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "ownerEmail": {
+            "type": "string"
+          },
+          "orcidOfOwner": {
+            "type": "string"
+          },
+          "contactEmail": {
+            "type": "string"
+          },
+          "sourceFolder": {
+            "type": "string"
+          },
+          "sourceFolderHost": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          },
+          "packedSize": {
+            "type": "number"
+          },
+          "numberOfFiles": {
+            "type": "number"
+          },
+          "numberOfFilesArchived": {
+            "type": "number"
+          },
+          "creationTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "validationStatus": {
+            "type": "string"
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string",
+            "description": "Dataset description"
+          },
+          "datasetName": {
+            "type": "string"
+          },
+          "classification": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "isPublished": {
+            "type": "boolean"
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "datasetlifecycle": {
+            "$ref": "#/components/schemas/Lifecycle"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "instrumentId": {
+            "type": "string"
+          },
+          "techniques": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Technique"
+            }
+          },
+          "sharedWith": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "investigator": {
+            "type": "string"
+          },
+          "inputDatasets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "usedSoftware": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "jobParameters": {
+            "type": "object"
+          },
+          "jobLogData": {
+            "type": "string"
+          },
+          "scientificMetadata": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "owner",
+          "ownerEmail",
+          "orcidOfOwner",
+          "contactEmail",
+          "sourceFolder",
+          "sourceFolderHost",
+          "size",
+          "packedSize",
+          "numberOfFiles",
+          "numberOfFilesArchived",
+          "creationTime",
+          "type",
+          "validationStatus",
+          "keywords",
+          "description",
+          "datasetName",
+          "classification",
+          "license",
+          "version",
+          "isPublished",
+          "history",
+          "datasetlifecycle",
+          "createdAt",
+          "updatedAt",
+          "instrumentId",
+          "techniques",
+          "sharedWith",
+          "investigator",
+          "inputDatasets",
+          "usedSoftware",
+          "jobParameters",
+          "jobLogData",
+          "scientificMetadata"
+        ]
+      },
+      "CreateRawDatasetDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "ownerEmail": {
+            "type": "string"
+          },
+          "orcidOfOwner": {
+            "type": "string"
+          },
+          "contactEmail": {
+            "type": "string"
+          },
+          "sourceFolder": {
+            "type": "string"
+          },
+          "sourceFolderHost": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          },
+          "packedSize": {
+            "type": "number"
+          },
+          "numberOfFiles": {
+            "type": "number"
+          },
+          "numberOfFilesArchived": {
+            "type": "number"
+          },
+          "creationTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "validationStatus": {
+            "type": "string"
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string",
+            "description": "Dataset description"
+          },
+          "datasetName": {
+            "type": "string"
+          },
+          "classification": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "isPublished": {
+            "type": "boolean"
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "datasetlifecycle": {
+            "$ref": "#/components/schemas/Lifecycle"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "instrumentId": {
+            "type": "string"
+          },
+          "techniques": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Technique"
+            }
+          },
+          "sharedWith": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "principalInvestigator": {
+            "type": "string"
+          },
+          "endTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "creationLocation": {
+            "type": "string"
+          },
+          "dataFormat": {
+            "type": "string"
+          },
+          "scientificMetadata": {
+            "type": "object"
+          },
+          "proposalId": {
+            "type": "string"
+          },
+          "sampleId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "owner",
+          "ownerEmail",
+          "orcidOfOwner",
+          "contactEmail",
+          "sourceFolder",
+          "sourceFolderHost",
+          "size",
+          "packedSize",
+          "numberOfFiles",
+          "numberOfFilesArchived",
+          "creationTime",
+          "type",
+          "validationStatus",
+          "keywords",
+          "description",
+          "datasetName",
+          "classification",
+          "license",
+          "version",
+          "isPublished",
+          "history",
+          "datasetlifecycle",
+          "createdAt",
+          "updatedAt",
+          "instrumentId",
+          "techniques",
+          "sharedWith",
+          "principalInvestigator",
+          "endTime",
+          "creationLocation",
+          "dataFormat",
+          "scientificMetadata",
+          "proposalId"
+        ]
+      },
+      "CreateDatasetDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "ownerEmail": {
+            "type": "string"
+          },
+          "orcidOfOwner": {
+            "type": "string"
+          },
+          "contactEmail": {
+            "type": "string"
+          },
+          "sourceFolder": {
+            "type": "string"
+          },
+          "sourceFolderHost": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          },
+          "packedSize": {
+            "type": "number"
+          },
+          "numberOfFiles": {
+            "type": "number"
+          },
+          "numberOfFilesArchived": {
+            "type": "number"
+          },
+          "creationTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "validationStatus": {
+            "type": "string"
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string",
+            "description": "Dataset description"
+          },
+          "datasetName": {
+            "type": "string"
+          },
+          "classification": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "isPublished": {
+            "type": "boolean"
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "datasetlifecycle": {
+            "$ref": "#/components/schemas/Lifecycle"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "instrumentId": {
+            "type": "string"
+          },
+          "techniques": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Technique"
+            }
+          },
+          "sharedWith": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "creationLocation": {
+            "type": "string"
+          },
+          "principalInvestigator": {
+            "type": "string"
+          },
+          "scientificMetadata": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "owner",
+          "ownerGroup",
+          "accessGroups",
+          "contactEmail",
+          "creationLocation",
+          "principalInvestigator",
+          "datasetName",
+          "type",
+          "isPublished",
+          "creationTime",
+          "sourceFolder",
+          "scientificMetadata"
+        ]
+      },
+      "Dataset": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "instrumentGroup": {
+            "type": "string",
+            "description": "Optional additional groups which have read and write access to the data. Users which are member in one of the groups listed here are allowed to access this data."
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "updatedBy": {
+            "type": "string"
+          },
+          "pid": {
+            "type": "string",
+            "description": "Persistent Identifier for datasets derived from UUIDv4 and prepended automatically by site specific PID prefix like 20.500.12345/"
+          },
+          "owner": {
+            "type": "string",
+            "description": "Owner or custodian of the data set, usually first name + lastname. The string may contain a list of persons, which should then be seperated by semicolons."
+          },
+          "ownerEmail": {
+            "type": "string",
+            "description": "Email of owner or of custodian of the data set. The string may contain a list of emails, which should then be seperated by semicolons."
+          },
+          "orcidOfOwner": {
+            "type": "string",
+            "description": "ORCID of owner/custodian. The string may contain a list of ORCID, which should then be separated by semicolons."
+          },
+          "contactEmail": {
+            "type": "string",
+            "description": "Email of contact person for this dataset. The string may contain a list of emails, which should then be seperated by semicolons."
+          },
+          "sourceFolder": {
+            "type": "string",
+            "description": "Absolute file path on file server containing the files of this dataset, e.g. /some/path/to/sourcefolder. In case of a single file dataset, e.g. HDF5 data, it contains the path up to, but excluding the filename. Trailing slashes are removed."
+          },
+          "sourceFolderHost": {
+            "type": "string",
+            "description": "DNS host name of file server hosting sourceFolder, optionally including protocol e.g. [protocol://]fileserver1.example.com"
+          },
+          "size": {
+            "type": "number",
+            "description": "Total size of all source files contained in source folder on disk when unpacked"
+          },
+          "packedSize": {
+            "type": "number",
+            "description": "Total size of all datablock package files created for this dataset"
+          },
+          "numberOfFiles": {
+            "type": "number",
+            "description": "Total number of lines in filelisting of all OrigDatablocks for this dataset"
+          },
+          "numberOfFilesArchived": {
+            "type": "number",
+            "description": "Total number of lines in filelisting of all Datablocks for this dataset"
+          },
+          "creationTime": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Time when dataset became fully available on disk, i.e. all containing files have been written. Format according to chapter 5.6 internet date/time format in RFC 3339. Local times without timezone/offset info are automatically transformed to UTC using the timezone of the API server."
+          },
+          "type": {
+            "type": "string",
+            "description": "Characterize type of dataset, either 'base' or 'raw' or 'derived'. Autofilled when choosing the proper inherited models"
+          },
+          "validationStatus": {
+            "type": "string",
+            "description": "Defines a level of trust, e.g. a measure of how much data was verified or used by other persons"
+          },
+          "keywords": {
+            "description": "Array of tags associated with the meaning or contents of this dataset. Values should ideally come from defined vocabularies, taxonomies, ontologies or knowledge graphs",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string",
+            "description": "Free text explanation of contents of dataset"
+          },
+          "datasetName": {
+            "type": "string",
+            "description": "A name for the dataset, given by the creator to carry some semantic meaning. Useful for display purposes e.g. instead of displaying the pid. Will be autofilled if missing using info from sourceFolder"
+          },
+          "classification": {
+            "type": "string",
+            "description": "ACIA information about AUthenticity,COnfidentiality,INtegrity and AVailability requirements of dataset. E.g. AV(ailabilty)=medium could trigger the creation of a two tape copies. Format 'AV=medium,CO=low'"
+          },
+          "license": {
+            "type": "string",
+            "description": "Name of license under which data can be used"
+          },
+          "version": {
+            "type": "string",
+            "description": "Version of API used in creation of dataset"
+          },
+          "isPublished": {
+            "type": "boolean",
+            "description": "Flag is true when data are made publically available"
+          },
+          "history": {
+            "description": "List of objects containing old value and new value",
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "datasetlifecycle": {
+            "description": "For each dataset there exists an embedded dataset lifecycle document which describes the current status of the dataset during its lifetime with respect to the storage handling systems",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Lifecycle"
+              }
+            ]
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Date when dataset was created."
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Date when the dataset was last modified."
+          },
+          "instrumentId": {
+            "type": "string",
+            "description": "ID of instrument where the data was created"
+          },
+          "techniques": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Technique"
+            },
+            "description": "Stores the metadata information for techniques"
+          },
+          "sharedWith": {
+            "description": "List of users that the dataset has been shared with",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attachment"
+            },
+            "description": "Small less than 16 MB attachments, envisaged for png/jpeg previews"
+          },
+          "origdatablocks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrigDatablock"
+            },
+            "description": "Container list all files and their attributes which make up a dataset. Usually Filled at the time the datasets metadata is created in the data catalog. Can be used by subsequent archiving processes to create the archived datasets."
+          },
+          "datablocks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Datablock"
+            },
+            "description": "When archiving a dataset all files contained in the dataset are listed here together with their checksum information. Several datablocks can be created if the file listing is too long for a single datablock. This partitioning decision is done by the archiving system to allow for chunks of datablocks with managable sizes. E.g a dataset consisting of 10 TB of data could be split into 10 datablocks of about 1 TB each. The upper limit set by the data catalog system itself is given by the fact that documents must be smaller than 16 MB, which typically allows for datasets of about 100000 files."
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "pid",
+          "owner",
+          "ownerEmail",
+          "orcidOfOwner",
+          "contactEmail",
+          "sourceFolder",
+          "sourceFolderHost",
+          "size",
+          "packedSize",
+          "numberOfFiles",
+          "numberOfFilesArchived",
+          "creationTime",
+          "type",
+          "validationStatus",
+          "keywords",
+          "description",
+          "datasetName",
+          "classification",
+          "license",
+          "version",
+          "isPublished",
+          "history",
+          "datasetlifecycle",
+          "createdAt",
+          "updatedAt",
+          "techniques",
+          "sharedWith",
+          "attachments",
+          "origdatablocks",
+          "datablocks"
+        ]
+      },
+      "UpdateDatasetDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "ownerEmail": {
+            "type": "string"
+          },
+          "orcidOfOwner": {
+            "type": "string"
+          },
+          "contactEmail": {
+            "type": "string"
+          },
+          "sourceFolder": {
+            "type": "string"
+          },
+          "sourceFolderHost": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          },
+          "packedSize": {
+            "type": "number"
+          },
+          "numberOfFiles": {
+            "type": "number"
+          },
+          "numberOfFilesArchived": {
+            "type": "number"
+          },
+          "creationTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "validationStatus": {
+            "type": "string"
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string",
+            "description": "Dataset description"
+          },
+          "datasetName": {
+            "type": "string"
+          },
+          "classification": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "isPublished": {
+            "type": "boolean"
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "datasetlifecycle": {
+            "$ref": "#/components/schemas/Lifecycle"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "instrumentId": {
+            "type": "string"
+          },
+          "techniques": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Technique"
+            }
+          },
+          "sharedWith": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Attachment": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "instrumentGroup": {
+            "type": "string",
+            "description": "Optional additional groups which have read and write access to the data. Users which are member in one of the groups listed here are allowed to access this data."
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "updatedBy": {
+            "type": "string"
+          },
+          "_id": {
+            "type": "string"
+          },
+          "thumbnail": {
+            "type": "string",
+            "description": "Contains a thumbnail preview in base64 encoded png format for a given dataset"
+          },
+          "caption": {
+            "type": "string",
+            "description": "Attachment caption to show in frontend"
+          },
+          "datasetId": {
+            "type": "string"
+          },
+          "proposalId": {
+            "type": "string"
+          },
+          "sampleId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "_id",
+          "thumbnail",
+          "caption"
+        ]
+      },
+      "UpdateAttachmentDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "thumbnail": {
+            "type": "string",
+            "description": "Contains a thumbnail preview in base64 encoded png format for a given dataset"
+          },
+          "caption": {
+            "type": "string",
+            "description": "Attachment caption to show in catanie"
+          },
+          "datasetId": {
+            "type": "string"
+          },
+          "proposalId": {
+            "type": "string"
+          },
+          "sampleId": {
+            "type": "string"
+          }
+        }
+      },
+      "DataFile": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Relative path of the file within the dataset folder"
+          },
+          "size": {
+            "type": "number",
+            "description": "Uncompressed file size in bytes"
+          },
+          "time": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Time of file creation on disk, format according to chapter 5.6 internet date/time format in RFC 3339. Local times without timezone/offset info are automatically transformed to UTC using the timezone of the API server"
+          },
+          "chk": {
+            "type": "string",
+            "description": "Checksum for the file, e.g. its sha-2 hashstring"
+          },
+          "uid": {
+            "type": "string",
+            "description": "optional: user ID name as seen on filesystem"
+          },
+          "gid": {
+            "type": "string",
+            "description": "optional: group ID name as seen on filesystem"
+          },
+          "perm": {
+            "type": "string",
+            "description": "optional: Posix permission bits"
+          }
+        },
+        "required": [
+          "path",
+          "size",
+          "time",
+          "chk",
+          "uid",
+          "gid",
+          "perm"
+        ]
+      },
+      "CreateOrigdatablockDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "instrumentGroup": {
+            "type": "string",
+            "description": "Optional additional groups which have read and write access to the data. Users which are member in one of the groups listed here are allowed to access this data."
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "updatedBy": {
+            "type": "string"
+          },
+          "datasetId": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          },
+          "dataFileList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataFile"
+            }
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "datasetId",
+          "size",
+          "dataFileList"
+        ]
+      },
+      "OrigDatablock": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "instrumentGroup": {
+            "type": "string",
+            "description": "Optional additional groups which have read and write access to the data. Users which are member in one of the groups listed here are allowed to access this data."
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "updatedBy": {
+            "type": "string"
+          },
+          "_id": {
+            "type": "string"
+          },
+          "datasetId": {
+            "type": "string",
+            "description": "PID of the dataset to which the orig datablock belongs."
+          },
+          "size": {
+            "type": "number",
+            "description": "Total size in bytes of all files contained in the dataFileList"
+          },
+          "dataFileList": {
+            "description": "Embedded schema definition for which fields are required for each file",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "_id",
+          "datasetId",
+          "size",
+          "dataFileList"
+        ]
+      },
+      "UpdateOrigdatablockDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "instrumentGroup": {
+            "type": "string",
+            "description": "Optional additional groups which have read and write access to the data. Users which are member in one of the groups listed here are allowed to access this data."
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "updatedBy": {
+            "type": "string"
+          },
+          "datasetId": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          },
+          "dataFileList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataFile"
+            }
+          }
+        }
+      },
+      "CreateDatablockDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "datasetId": {
+            "type": "string"
+          },
+          "archiveId": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          },
+          "packedSize": {
+            "type": "number"
+          },
+          "chkAlg": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "dataFileList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataFile"
+            }
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "datasetId",
+          "archiveId",
+          "size",
+          "packedSize",
+          "chkAlg",
+          "version",
+          "dataFileList"
+        ]
+      },
+      "Datablock": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "instrumentGroup": {
+            "type": "string",
+            "description": "Optional additional groups which have read and write access to the data. Users which are member in one of the groups listed here are allowed to access this data."
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "updatedBy": {
+            "type": "string"
+          },
+          "_id": {
+            "type": "string",
+            "description": "Catalog internal UUIDv4 for datablock"
+          },
+          "datasetId": {
+            "type": "string",
+            "description": "PID of the dataset to which the datablock belongs"
+          },
+          "archiveId": {
+            "type": "string",
+            "description": "Unique identifier given bey archive system to the stored datablock. This id is used when data is retrieved back."
+          },
+          "size": {
+            "type": "number",
+            "description": "Total size in bytes of all files in datablock when unpacked"
+          },
+          "packedSize": {
+            "type": "number",
+            "description": "Size of datablock package file"
+          },
+          "chkAlg": {
+            "type": "string",
+            "description": "Algoritm used for calculation of checksums, e.g. sha2"
+          },
+          "version": {
+            "type": "string",
+            "description": "Version string defining format of how data is packed and stored in archive"
+          },
+          "dataFileList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "_id",
+          "datasetId",
+          "archiveId",
+          "size",
+          "packedSize",
+          "chkAlg",
+          "version",
+          "dataFileList"
+        ]
+      },
+      "UpdateDatablockDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "datasetId": {
+            "type": "string"
+          },
+          "archiveId": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          },
+          "packedSize": {
+            "type": "number"
+          },
+          "chkAlg": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "dataFileList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataFile"
+            }
+          }
+        }
+      },
+      "CreateProposalDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "proposalId": {
+            "type": "string"
+          },
+          "pi_email": {
+            "type": "string"
+          },
+          "pi_firstname": {
+            "type": "string"
+          },
+          "pi_lastname": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "abstract": {
+            "type": "string"
+          },
+          "startTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "endTime": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "proposalId",
+          "pi_email",
+          "pi_firstname",
+          "pi_lastname",
+          "email",
+          "firstname",
+          "lastname",
+          "title",
+          "abstract"
+        ]
+      },
+      "MeasurementPeriod": {
+        "type": "object",
+        "properties": {
+          "instrument": {
+            "type": "string",
+            "description": "Instrument or beamline identifier where measurement was pursued, e.g. /PSI/SLS/TOMCAT"
+          },
+          "start": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Time when measurement period started, format according to chapter 5.6 internet date/time format in RFC 3339. Local times without timezone/offset info are automatically transformed to UTC using the timezone of the API server"
+          },
+          "end": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Time when measurement period ended, format according to chapter 5.6 internet date/time format in RFC 3339. Local times without timezone/offset info are automatically transformed to UTC using the timezone of the API server"
+          },
+          "comment": {
+            "type": "string",
+            "description": "Additional information relevant for this measurement period, e.g. if different accounts were used for data taking"
+          }
+        },
+        "required": [
+          "instrument",
+          "start",
+          "end",
+          "comment"
+        ]
+      },
+      "Proposal": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "instrumentGroup": {
+            "type": "string",
+            "description": "Optional additional groups which have read and write access to the data. Users which are member in one of the groups listed here are allowed to access this data."
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "updatedBy": {
+            "type": "string"
+          },
+          "proposalId": {
+            "type": "string",
+            "description": "Globally unique identifier of a proposal, eg. PID-prefix/internal-proposal-number. PID prefix is auto prepended"
+          },
+          "pi_email": {
+            "type": "string",
+            "description": "Email of principal investigator"
+          },
+          "pi_firstname": {
+            "type": "string",
+            "description": "First name of principal investigator"
+          },
+          "pi_lastname": {
+            "type": "string",
+            "description": "Last name of principal investigator"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email of main proposer"
+          },
+          "firstname": {
+            "type": "string",
+            "description": "First name of main proposer"
+          },
+          "lastname": {
+            "type": "string",
+            "description": "Last name of main proposer"
+          },
+          "title": {
+            "type": "string",
+            "description": "The title of the proposal"
+          },
+          "abstract": {
+            "type": "string",
+            "description": "The proposal abstract"
+          },
+          "startTime": {
+            "format": "date-time",
+            "type": "string",
+            "description": "The date when the data collection starts"
+          },
+          "endTime": {
+            "format": "date-time",
+            "type": "string",
+            "description": "The date when data collection finishes"
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attachment"
+            },
+            "description": "Small less than 16 MB attachments, envisaged for png/jpeg previews"
+          },
+          "datasets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dataset"
+            }
+          },
+          "MeasurementPeriodList": {
+            "description": "Embedded information used inside proposals to define which type of experiment as to be pursued where (at which intrument) and when.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MeasurementPeriod"
+              }
+            ]
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "proposalId",
+          "pi_email",
+          "pi_firstname",
+          "pi_lastname",
+          "email",
+          "firstname",
+          "lastname",
+          "title",
+          "abstract",
+          "attachments",
+          "datasets",
+          "MeasurementPeriodList"
+        ]
+      },
+      "UpdateProposalDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "proposalId": {
+            "type": "string"
+          },
+          "pi_email": {
+            "type": "string"
+          },
+          "pi_firstname": {
+            "type": "string"
+          },
+          "pi_lastname": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "abstract": {
+            "type": "string"
+          },
+          "startTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "endTime": {
+            "format": "date-time",
+            "type": "string"
+          }
+        }
+      },
+      "UpdateRawDatasetDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "ownerEmail": {
+            "type": "string"
+          },
+          "orcidOfOwner": {
+            "type": "string"
+          },
+          "contactEmail": {
+            "type": "string"
+          },
+          "sourceFolder": {
+            "type": "string"
+          },
+          "sourceFolderHost": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          },
+          "packedSize": {
+            "type": "number"
+          },
+          "numberOfFiles": {
+            "type": "number"
+          },
+          "numberOfFilesArchived": {
+            "type": "number"
+          },
+          "creationTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "validationStatus": {
+            "type": "string"
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string",
+            "description": "Dataset description"
+          },
+          "datasetName": {
+            "type": "string"
+          },
+          "classification": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "isPublished": {
+            "type": "boolean"
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "datasetlifecycle": {
+            "$ref": "#/components/schemas/Lifecycle"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "instrumentId": {
+            "type": "string"
+          },
+          "techniques": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Technique"
+            }
+          },
+          "sharedWith": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "principalInvestigator": {
+            "type": "string"
+          },
+          "endTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "creationLocation": {
+            "type": "string"
+          },
+          "dataFormat": {
+            "type": "string"
+          },
+          "scientificMetadata": {
+            "type": "object"
+          },
+          "proposalId": {
+            "type": "string"
+          },
+          "sampleId": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateInstrumentDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "customMetadata": {
+            "type": "object",
+            "default": {}
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "Instrument": {
+        "type": "object",
+        "properties": {
+          "pid": {
+            "type": "string",
+            "description": "PID of the instrument"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the instrument."
+          },
+          "customMetadata": {
+            "type": "object",
+            "default": {},
+            "description": "JSON object containing custom metadata"
+          },
+          "datasets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dataset"
+            }
+          }
+        },
+        "required": [
+          "pid",
+          "name",
+          "datasets"
+        ]
+      },
+      "UpdateInstrumentDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "customMetadata": {
+            "type": "object",
+            "default": {}
+          }
+        }
+      },
+      "CreateJobDto": {
+        "type": "object",
+        "properties": {
+          "emailJobInitiator": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "creationTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "executionTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "jobParams": {
+            "type": "object"
+          },
+          "jobStatusMessage": {
+            "type": "string"
+          },
+          "datasetList": {
+            "type": "object"
+          },
+          "jobResultObject": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "emailJobInitiator",
+          "type",
+          "creationTime"
+        ]
+      },
+      "Job": {
+        "type": "object",
+        "properties": {
+          "emailJobInitiator": {
+            "type": "string",
+            "description": "The email of the person initiating the job request"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of job, e.g. archive, retrieve etc"
+          },
+          "creationTime": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Time when job is created. Format according to chapter 5.6 internet date/time format in RFC 3339"
+          },
+          "executionTime": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Time when job should be executed. If not specified then the Job will be executed asap. Format according to chapter 5.6 internet date/time format in RFC 3339"
+          },
+          "jobParams": {
+            "type": "object",
+            "description": "Object of key-value pairs defining job input parameters, e.g. 'desinationPath' for retrieve jobs or 'tapeCopies' for archive jobs"
+          },
+          "jobStatusMessage": {
+            "type": "string",
+            "description": "Defines current status of job lifecycle"
+          },
+          "datasetList": {
+            "description": "Array of objects with keys: pid, files. The value for the pid key defines the dataset ID, the value for the files key is an array of file names. This array is either an empty array, implying that all files within the dataset are selected or an explicit list of dataset-relative file paths, which should be selected",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "jobResultObject": {
+            "type": "object",
+            "description": "Detailed return value after job is finished"
+          }
+        },
+        "required": [
+          "emailJobInitiator",
+          "type",
+          "creationTime",
+          "executionTime",
+          "jobParams",
+          "jobStatusMessage",
+          "datasetList",
+          "jobResultObject"
+        ]
+      },
+      "UpdateJobDto": {
+        "type": "object",
+        "properties": {
+          "emailJobInitiator": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "creationTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "executionTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "jobParams": {
+            "type": "object"
+          },
+          "jobStatusMessage": {
+            "type": "string"
+          },
+          "datasetList": {
+            "type": "object"
+          },
+          "jobResultObject": {
+            "type": "object"
+          }
+        }
+      },
+      "CreatePolicyDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "manager": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tapeRedundancy": {
+            "type": "string"
+          },
+          "autoArchive": {
+            "type": "boolean"
+          },
+          "autoArchiveDelay": {
+            "type": "number"
+          },
+          "archiveEmailNotification": {
+            "type": "boolean"
+          },
+          "archiveEmailsToBeNotified": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "retrieveEmailNotification": {
+            "type": "boolean"
+          },
+          "retrieveEmailsToBeNotified": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "embargoPeriod": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "manager",
+          "tapeRedundancy",
+          "autoArchive",
+          "autoArchiveDelay",
+          "archiveEmailNotification",
+          "archiveEmailsToBeNotified",
+          "retrieveEmailNotification",
+          "retrieveEmailsToBeNotified",
+          "embargoPeriod"
+        ]
+      },
+      "Policy": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "instrumentGroup": {
+            "type": "string",
+            "description": "Optional additional groups which have read and write access to the data. Users which are member in one of the groups listed here are allowed to access this data."
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "updatedBy": {
+            "type": "string"
+          },
+          "_id": {
+            "type": "string"
+          },
+          "manager": {
+            "description": "Defines the emails of users that can modify the policy parameters",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tapeRedundancy": {
+            "type": "string",
+            "description": "Defines the level of redundancy in storage to minimize loss of data. Allowed values are low, medium, high. Low could e.g. mean one tape copy only, medium could mean two tape copies and high two geo-redundant tape copies"
+          },
+          "autoArchive": {
+            "type": "boolean",
+            "description": "Flag to indicate that a dataset should be automatically archived after ingest. If false then archive delay is ignored"
+          },
+          "autoArchiveDelay": {
+            "type": "number",
+            "description": "Number of days after dataset creation that (remaining) datasets are archived automatically"
+          },
+          "archiveEmailNotification": {
+            "type": "boolean",
+            "description": "Flag is true when an email notification should be sent to archiveEmailsToBeNotified upon an archive job creation"
+          },
+          "archiveEmailsToBeNotified": {
+            "description": "Array of additional email addresses that should be notified up an archive job creation",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "retrieveEmailNotification": {
+            "type": "boolean",
+            "description": "Flag is true when an email notification should be sent to retrieveEmailsToBeNotified upon a retrieval job creation"
+          },
+          "retrieveEmailsToBeNotified": {
+            "description": "Array of additional email addresses that should be notified up a retrieval job creation",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "embargoPeriod": {
+            "type": "number",
+            "description": "Number of years after dataset creation before the dataset becomes public"
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "_id",
+          "manager",
+          "tapeRedundancy",
+          "autoArchive",
+          "autoArchiveDelay",
+          "archiveEmailNotification",
+          "archiveEmailsToBeNotified",
+          "retrieveEmailNotification",
+          "retrieveEmailsToBeNotified",
+          "embargoPeriod"
+        ]
+      },
+      "UpdatePolicyDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "manager": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tapeRedundancy": {
+            "type": "string"
+          },
+          "autoArchive": {
+            "type": "boolean"
+          },
+          "autoArchiveDelay": {
+            "type": "number"
+          },
+          "archiveEmailNotification": {
+            "type": "boolean"
+          },
+          "archiveEmailsToBeNotified": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "retrieveEmailNotification": {
+            "type": "boolean"
+          },
+          "retrieveEmailsToBeNotified": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "embargoPeriod": {
+            "type": "number"
+          }
+        }
+      },
+      "CreatePublishedDataDto": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "doi": {
+            "type": "string"
+          },
+          "affiliation": {
+            "type": "string"
+          },
+          "creator": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "publisher": {
+            "type": "string"
+          },
+          "publicationYear": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "abstract": {
+            "type": "string"
+          },
+          "dataDescription": {
+            "type": "string"
+          },
+          "resourceType": {
+            "type": "string"
+          },
+          "numberOfFiles": {
+            "type": "number"
+          },
+          "sizeOfArchive": {
+            "type": "number"
+          },
+          "pidArray": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "authors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "registeredTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "scicatUser": {
+            "type": "string"
+          },
+          "thumbnail": {
+            "type": "string"
+          },
+          "relatedPublications": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "downloadLink": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "creator",
+          "publisher",
+          "publicationYear",
+          "title",
+          "abstract",
+          "dataDescription",
+          "resourceType",
+          "pidArray",
+          "registeredTime"
+        ]
+      },
+      "PublishedData": {
+        "type": "object",
+        "properties": {
+          "doi": {
+            "type": "string",
+            "description": "Digital Object Identifier"
+          },
+          "affiliation": {
+            "type": "string",
+            "description": "Creator Affiliation"
+          },
+          "creator": {
+            "description": "Creator of dataset/dataset collection",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "publisher": {
+            "type": "string",
+            "description": "Dataset publisher"
+          },
+          "publicationYear": {
+            "type": "number",
+            "description": "Year of publication "
+          },
+          "title": {
+            "type": "string",
+            "description": "Title"
+          },
+          "url": {
+            "type": "string",
+            "description": "Full URL to the landing page for this DOI"
+          },
+          "abstract": {
+            "type": "string",
+            "description": "Abstract text for published datasets"
+          },
+          "dataDescription": {
+            "type": "string",
+            "description": "Link to description of how to re-use data"
+          },
+          "resourceType": {
+            "type": "string",
+            "description": "e.g. raw/ derived"
+          },
+          "numberOfFiles": {
+            "type": "number",
+            "description": "Number of files"
+          },
+          "sizeOfArchive": {
+            "type": "number",
+            "description": "Size of archive"
+          },
+          "pidArray": {
+            "description": "Array of one or more PIDS which make up the published data",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "authors": {
+            "description": "List of Names of authors of the to be published data",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "registeredTime": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Time when doi is successfully registered"
+          },
+          "status": {
+            "type": "string",
+            "description": "Indication of position in publication workflow e.g. doiRegistered"
+          },
+          "scicatUser": {
+            "type": "string",
+            "description": "The username of the user that clicks the publish button in the client"
+          },
+          "thumbnail": {
+            "type": "string",
+            "description": "Small, less than 16 MB base 64 image preview of dataset"
+          },
+          "relatedPublications": {
+            "description": "List of URLs pointing to related publications like DOI URLS of journal articles",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "downloadLink": {
+            "type": "string",
+            "description": "URL pointing to page from which data can be downloaded"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Date when the published data was created"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Date when the published data was last updated"
+          }
+        },
+        "required": [
+          "doi",
+          "creator",
+          "publisher",
+          "publicationYear",
+          "title",
+          "abstract",
+          "dataDescription",
+          "resourceType",
+          "pidArray",
+          "registeredTime",
+          "status",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      "UpdatePublishedDataDto": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "doi": {
+            "type": "string"
+          },
+          "affiliation": {
+            "type": "string"
+          },
+          "creator": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "publisher": {
+            "type": "string"
+          },
+          "publicationYear": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "abstract": {
+            "type": "string"
+          },
+          "dataDescription": {
+            "type": "string"
+          },
+          "resourceType": {
+            "type": "string"
+          },
+          "numberOfFiles": {
+            "type": "number"
+          },
+          "sizeOfArchive": {
+            "type": "number"
+          },
+          "pidArray": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "authors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "registeredTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "scicatUser": {
+            "type": "string"
+          },
+          "thumbnail": {
+            "type": "string"
+          },
+          "relatedPublications": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "downloadLink": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateSampleDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "sampleCharacteristics": {
+            "type": "object"
+          },
+          "isPublished": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "owner",
+          "description",
+          "createdAt",
+          "sampleCharacteristics",
+          "isPublished"
+        ]
+      },
+      "Sample": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "instrumentGroup": {
+            "type": "string",
+            "description": "Optional additional groups which have read and write access to the data. Users which are member in one of the groups listed here are allowed to access this data."
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "updatedBy": {
+            "type": "string"
+          },
+          "sampleId": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string",
+            "description": "The owner of the sample"
+          },
+          "description": {
+            "type": "string",
+            "description": "A description of the sample"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Date when the sample was created"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Date when the sample was last modified"
+          },
+          "sampleCharacteristics": {
+            "type": "object",
+            "default": {},
+            "description": "JSON object containing the sample characteristics metadata"
+          },
+          "isPublished": {
+            "type": "boolean",
+            "default": false,
+            "description": "Flag is true when data are made publically available"
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attachment"
+            }
+          },
+          "datasets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dataset"
+            }
+          }
+        },
+        "required": [
+          "ownerGroup",
+          "accessGroups",
+          "createdBy",
+          "updatedBy",
+          "sampleId",
+          "owner",
+          "description",
+          "createdAt",
+          "updatedAt",
+          "sampleCharacteristics",
+          "isPublished",
+          "attachments",
+          "datasets"
+        ]
+      },
+      "UpdateSampleDto": {
+        "type": "object",
+        "properties": {
+          "ownerGroup": {
+            "type": "string",
+            "description": "Defines the group which owns the data, and therefore has unrestricted access to this data. Usually a pgroup like p12151"
+          },
+          "accessGroups": {
+            "description": "Optional additional groups which have read access to the data. Users which are member in one of the groups listed here are allowed to access this data. The special group 'public' makes data available to all users",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Functional or user account name who created this instance"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "Functional or user account name who last updated this instance"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "sampleCharacteristics": {
+            "type": "object"
+          },
+          "isPublished": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}
